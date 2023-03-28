@@ -7,8 +7,9 @@
     min-height: 100vh;
     justify-content: flex-start;
     font-family: Arial, Helvetica, sans-serif;
+    /* background-color: #883A22ff; */
     background: #363947;
-    /* background: linear-gradient(0.25turn, #48341d, #ebf8e1, #48341d); */
+    /* background: linear-gradient(0.25turn, rgb(149, 73, 49), rgb(149, 75, 53), rgb(134, 68, 47)); */
   }
   
   /*Display arrangment of header section*/
@@ -52,35 +53,7 @@
     margin-top: 35px;
     width: auto;
   }
-  
-  .circlecropper {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-  }
-  
-  /*When cursor is hover on profile photo, let a photo enlarge from original size*/
-  .photo:hover {
-    position: relative;
-    top: 30px;
-    transform: scale(2);
-    transform-origin: center;
-    z-index: 1;
-    margin-left: 55px;
-    margin-top: 10px;
-  }
-  .circlecropper:hover {
-    width: 125px;
-    height: 125px;
-    position: absolute;
-    top: 5px; 
-    left: 250px;
-    overflow: hidden;
-    border-radius: 50%;
-    transform-origin: center;
-  }
+
   /*Setting of contents in header section*/
   nav ul {
     display: flex;
@@ -101,46 +74,6 @@
     text-shadow: black 1px 1px 5px;
   }
   
-  h2 {
-    margin: 2% 0;
-    font-size: 200%;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
-  section {
-    display: flex;
-    flex: 1 1 0;
-    padding: 20px;
-    margin: 1% auto;
-    margin-bottom: 20px;
-    margin-right: 20px;  
-    color: #fcfcfc;
-    font-weight: bold;
-  }
-  
-  /*Properties of the text (github & linkedin)*/
-  .highlighter {  
-    color: white;
-    text-decoration: none;
-  }
-  
-  /*When cursor over the text (github & linkedin), text color will change*/
-  .highlighter:hover {
-    text-decoration: underline;
-    color: wheat;
-  }
-  
-  .contactfooter {
-    display: flex;
-    justify-content: center;
-    padding: 2%;
-    font-weight: bold;
-    color: #fcfcfc;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
+
+
   

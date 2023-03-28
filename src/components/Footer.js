@@ -1,4 +1,5 @@
 import React from "react";
+import './styles/Footer.css';
 
 const styles = {
     email: {
@@ -16,7 +17,7 @@ export default function Footer() {
     return (
             <div className="contactfooter">
                 <a
-                className="btn btn-primary btn-floating m-2"
+                className="btn btn-primary btn-floating m-2 highlighter"
                 style={styles.email}
                 href="mailto:yelzawaung@gmail.com"
                 role="button"
@@ -25,7 +26,7 @@ export default function Footer() {
                 </a>
     
                 <a
-                className="btn btn-primary btn-floating m-2"
+                className="btn btn-primary btn-floating m-2 highlighter"
                 style={styles.linkedin}
                 href="https://www.linkedin.com/in/yel-zaw-aung-69a0b975/"
                 role="button"
@@ -34,7 +35,7 @@ export default function Footer() {
                 </a>
             
                 <a
-                className="btn btn-primary btn-floating m-2"
+                className="btn btn-primary btn-floating m-2 highlighter"
                 style={styles.github}
                 href="https://github.com/Yelzaw"
                 role="button"

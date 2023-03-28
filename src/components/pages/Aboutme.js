@@ -5,12 +5,14 @@ import profile from '../images/profile_1.jpg';
 
 export default function Aboutme() {
     return (
-        <div style={{display:'flex'}}>
+        <div className="display">
             <Card style={{
                 width:'100%',
-                margin: '1%'
+                margin: '1%',
+                borderStyle: 'none',
                 }}>
-                <img src={profile}/>
+                    <Card.Img variant="top" src={profile} />
+                {/* <img src={profile}/> */}
                 </Card>
             <div>
             <h1 className="aboutme"
