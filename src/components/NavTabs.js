@@ -1,11 +1,11 @@
 import React from 'react';
 import './styles/Header.css';
-
+import profile from './images/profile_1.jpg'
 function NavTabs({ currentPage, handlePageChange }) {
     return (
         <header>
-            <div className="profile">            
-            <h1>Yel Zaw Aung</h1>
+            <div className="profile">
+                <h1>Yel Zaw Aung</h1>
             </div>
             <nav>   
                     <ul className="nav nav-tabs">

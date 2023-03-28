@@ -14,9 +14,9 @@ const styles = {
 
 export default function Footer() {
     return (
-            <div className="col-md-3 col-lg-4 col-xl-4 mx-auto mt-4">
+            <div className="contactfooter">
                 <a
-                className="btn btn-primary btn-floating m-4"
+                className="btn btn-primary btn-floating m-2"
                 style={styles.email}
                 href="mailto:yelzawaung@gmail.com"
                 role="button"
@@ -25,7 +25,7 @@ export default function Footer() {
                 </a>
     
                 <a
-                className="btn btn-primary btn-floating m-4"
+                className="btn btn-primary btn-floating m-2"
                 style={styles.linkedin}
                 href="https://www.linkedin.com/in/yel-zaw-aung-69a0b975/"
                 role="button"
@@ -34,7 +34,7 @@ export default function Footer() {
                 </a>
             
                 <a
-                className="btn btn-primary btn-floating m-4"
+                className="btn btn-primary btn-floating m-2"
                 style={styles.github}
                 href="https://github.com/Yelzaw"
                 role="button"
