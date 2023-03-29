@@ -10,6 +10,7 @@ import traveltime from '../images/team-project.png';
 export default function Portfolio() {
     return (
         <Container>
+            <h1 style={{color:'black'}}>Portfolio</h1>
         <Row>
             <Col>
                 <div className="box">
