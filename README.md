@@ -13,7 +13,7 @@ This is my react portfolio and it was built as single-page applications.
 
 ## URLs
 
-The URL of the deployed application is: Live [link]()
+The URL of the deployed application is: Live [link](https://yelzaw.github.io/yel-react-portfolio)
 
 ## License
 
