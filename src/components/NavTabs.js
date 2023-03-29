@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles/Header.css';
-import profile from './images/profile_1.jpg'
 function NavTabs({ currentPage, handlePageChange }) {
     return (
         <header>

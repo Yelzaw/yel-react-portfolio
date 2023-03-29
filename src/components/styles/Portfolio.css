@@ -49,3 +49,11 @@
   .repository {
     background: lightblue
   }
+
+  @media screen and (max-width: 768px) {
+    .image {
+      display: block;
+      width: 80%;
+      height: auto;
+    }
+}

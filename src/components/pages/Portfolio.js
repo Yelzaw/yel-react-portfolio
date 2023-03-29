@@ -9,7 +9,7 @@ import traveltime from '../images/team-project.png';
 
 export default function Portfolio() {
     return (
-        <Container>
+        <Container className="media">
             <h1 style={{color:'black'}}>Portfolio</h1>
         <Row>
             <Col>

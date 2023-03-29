@@ -1,0 +1,27 @@
+.title {
+    text-align: center;
+    color: black
+}
+.resume {
+    font-size: 28px;
+}
+.cardbox {
+    max-width: 500px;
+    margin-left: 10%;
+}
+li {
+    font-weight:500;
+    font-size: 20px;
+}
+
+.display {
+    display:flex;
+}
+
+@media screen and (max-width: 768px) {
+    p { 
+        margin: 5%;
+        font-size: 15px;
+    }
+}
+    

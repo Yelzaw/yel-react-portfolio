@@ -1,6 +1,10 @@
 .formstyle {
-
     width: 90%;
     align-items: center;
     margin: 10%;
+}
+
+.title {
+    text-align: center;
+    color: black
 }

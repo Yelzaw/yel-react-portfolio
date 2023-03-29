@@ -56,7 +56,7 @@ export default function Contact() {
 
     return (
         <div className = "container mt-2 mb-2">
-            <h1 style={{color:'black'}}>Contact</h1>
+            <h1 className="title">Contact</h1>
             <form id="contact-form" >
                 <div className="controls">
                     <div className="row">
