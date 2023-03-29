@@ -12,7 +12,7 @@ const styles = {
         background: "#333333"
     }
 }
-
+//Footer with contact information
 export default function Footer() {
     return (
             <div className="contactfooter">

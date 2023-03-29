@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/Header.css';
 function NavTabs({ currentPage, handlePageChange }) {
     return (
+        //Navigation Bar
         <header>
             <div className="profile">
                 <h1>Yel Zaw Aung</h1>
