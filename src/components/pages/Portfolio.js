@@ -6,6 +6,11 @@ import Col from 'react-bootstrap/Col';
 
 import eventtime from '../images/event-time.jpg';
 import traveltime from '../images/team-project.png';
+import weather from '../images/screenshot.png';
+import workday from '../images/work-day-scheduler.jpg';
+import password from '../images/password-generator.jpg';
+import coding from '../images/horiseon.png';
+
 
 export default function Portfolio() {
     return (
@@ -46,12 +51,77 @@ export default function Portfolio() {
                     </div>
                 </div>
             </Col>
+            <Col>          
+                <div className="box">
+                    <img src={weather} alt="weather-dashboard" className="image"/>
+                    <div className="overlay">
+                        <a className="text" href="https://yelzaw.github.io/weather-dashboard-for-travelers/" target="_blank">Weather Dashboard for Travelers              
+                            <a
+                                className="btn btn-primary btn-floating m-2 repository"
+                                href="https://github.com/Yelzaw/weather-dashboard-for-travelers"
+                                target="_blank"
+                                role="button"
+                                >
+                                    <i className="fab fa-github"></i>
+                            </a>
+                        </a>
+                    </div>
+                </div>
+            </Col>
         </Row>
-        {/* <Row>
-          <Col>1 of 3</Col>
-          <Col>2 of 3</Col>
-          <Col>3 of 3</Col>
-        </Row> */}
+        <Row>
+        <Col>
+                <div className="box">
+                    <img src={password} alt="password-generator" className="image"/>
+                    <div className="overlay">
+                        <a className="text" href="https://yelzaw.github.io/password-generator-with-javascript/" target="_blank">Password Generator              
+                            <a
+                                className="btn btn-primary btn-floating m-2 repository"
+                                href="https://github.com/Yelzaw/password-generator-with-javascript"
+                                target="_blank"
+                                role="button"
+                                >
+                                    <i className="fab fa-github"></i>
+                            </a>
+                        </a>
+                    </div>
+                </div>
+            </Col>
+            <Col>          
+                <div className="box">
+                    <img src={workday} alt="work-day-scheduler" className="image"/>
+                    <div className="overlay">
+                        <a className="text" href="https://yelzaw.github.io/work-day-scheduler/" target="_blank">Work Day Scheduler              
+                            <a
+                                className="btn btn-primary btn-floating m-2 repository"
+                                href="https://github.com/Yelzaw/work-day-scheduler"
+                                target="_blank"
+                                role="button"
+                                >
+                                    <i className="fab fa-github"></i>
+                            </a>
+                        </a>
+                    </div>
+                </div>
+            </Col>
+            <Col>          
+                <div className="box">
+                    <img src={coding} alt="where-you-want-to-learn" className="image"/>
+                    <div className="overlay">
+                        <a className="text" href="https://yelzaw.github.io/01-html-css-git-homework/" target="_blank">Code Refactor Challenge              
+                            <a
+                                className="btn btn-primary btn-floating m-2 repository"
+                                href="https://github.com/Yelzaw/01-html-css-git-homework"
+                                target="_blank"
+                                role="button"
+                                >
+                                    <i className="fab fa-github"></i>
+                            </a>
+                        </a>
+                    </div>
+                </div>
+            </Col>
+        </Row>
       </Container>
   
       );
