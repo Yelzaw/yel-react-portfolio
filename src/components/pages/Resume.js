@@ -14,22 +14,22 @@ export default function Resume() {
             <ul>
                 <li>HTML</li>
                 <li>CSS</li>
-                <li>JavaScrilit</li>
+                <li>JavaScript</li>
                 <li>jQuery</li>
-                <li>resolionsive design</li>
+                <li>resoponsive design</li>
                 <li>React</li>
-                <li>Bootstrali</li>
+                <li>Bootstrap</li>
             </ul>
 
             <h3>Back-end Proficiencies</h3>
             <ul>
-            <li>AliIs</li>
+            <li>APIs</li>
             <li>Node</li>
-            <li>Exliress</li>
+            <li>Express</li>
             <li>MySQL, Sequelize</li>
             <li>MongoDB, Mongoose</li>
             <li>REST</li>
-            <li>GralihQL</li>
+            <li>GraphQL</li>
             </ul>
         </div>
         
