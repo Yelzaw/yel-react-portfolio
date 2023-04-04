@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.ce4da9cb.css",
-    "main.js": "/static/js/main.86e841af.js",
-    "static/media/event-time.jpg": "/static/media/event-time.67ec0a7142770d6a506d.jpg",
-    "static/media/team-project.png": "/static/media/team-project.f3e7a9fcc2ddbb28a43f.png",
-    "static/media/profile_1.jpg": "/static/media/profile_1.095d21fae590c4f56154.jpg",
-    "index.html": "/index.html",
-    "main.ce4da9cb.css.map": "/static/css/main.ce4da9cb.css.map",
-    "main.86e841af.js.map": "/static/js/main.86e841af.js.map"
+    "main.css": "/yel-react-portfolio/static/css/main.ce4da9cb.css",
+    "main.js": "/yel-react-portfolio/static/js/main.7c8206c1.js",
+    "static/media/event-time.jpg": "/yel-react-portfolio/static/media/event-time.67ec0a7142770d6a506d.jpg",
+    "static/media/horiseon.png": "/yel-react-portfolio/static/media/horiseon.cfc8aeea18c3ba4db383.png",
+    "static/media/team-project.png": "/yel-react-portfolio/static/media/team-project.f3e7a9fcc2ddbb28a43f.png",
+    "static/media/work-day-scheduler.jpg": "/yel-react-portfolio/static/media/work-day-scheduler.a52673fa32f50a34e0a8.jpg",
+    "static/media/screenshot.png": "/yel-react-portfolio/static/media/screenshot.c3766cb241e3856f085a.png",
+    "static/media/profile_1.jpg": "/yel-react-portfolio/static/media/profile_1.095d21fae590c4f56154.jpg",
+    "static/media/password-generator.jpg": "/yel-react-portfolio/static/media/password-generator.df6cb871146b3f79e0f8.jpg",
+    "index.html": "/yel-react-portfolio/index.html",
+    "main.ce4da9cb.css.map": "/yel-react-portfolio/static/css/main.ce4da9cb.css.map",
+    "main.7c8206c1.js.map": "/yel-react-portfolio/static/js/main.7c8206c1.js.map"
   },
   "entrypoints": [
     "static/css/main.ce4da9cb.css",
-    "static/js/main.86e841af.js"
+    "static/js/main.7c8206c1.js"
   ]
 }
