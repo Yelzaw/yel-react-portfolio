@@ -10,13 +10,30 @@ import weather from '../images/screenshot.png';
 import workday from '../images/work-day-scheduler.jpg';
 import password from '../images/password-generator.jpg';
 import coding from '../images/horiseon.png';
-
+import eastcoastcamping from '../images/eastcoastcamp.gif';
 
 export default function Portfolio() {
     return (
         <Container className="media">
             <h1 style={{color:'black'}}>Portfolio</h1>
         <Row>
+            <Col>          
+                <div className="box">
+                    <img src={eastcoastcamping} alt="east coast camping" className="image"/>
+                    <div className="overlay">
+                        <a className="text" href="https://camp-eastcoast.herokuapp.com/" target="_blank">East Coast Camping              
+                            <a
+                                className="btn btn-primary btn-floating m-2 repository"
+                                href="https://github.com/Yelzaw/camp-eastcoast"
+                                target="_blank"
+                                role="button"
+                                >
+                                    <i className="fab fa-github"></i>
+                            </a>
+                        </a>
+                    </div>
+                </div>
+            </Col>
             <Col>
                 <div className="box">
                     <img src={eventtime} alt="event-time" className="image"/>
@@ -42,23 +59,6 @@ export default function Portfolio() {
                             <a
                                 className="btn btn-primary btn-floating m-2 repository"
                                 href="https://github.com/Yelzaw/where-you-want-to-learn"
-                                target="_blank"
-                                role="button"
-                                >
-                                    <i className="fab fa-github"></i>
-                            </a>
-                        </a>
-                    </div>
-                </div>
-            </Col>
-            <Col>          
-                <div className="box">
-                    <img src={weather} alt="weather-dashboard" className="image"/>
-                    <div className="overlay">
-                        <a className="text" href="https://yelzaw.github.io/weather-dashboard-for-travelers/" target="_blank">Weather Dashboard for Travelers              
-                            <a
-                                className="btn btn-primary btn-floating m-2 repository"
-                                href="https://github.com/Yelzaw/weather-dashboard-for-travelers"
                                 target="_blank"
                                 role="button"
                                 >
@@ -112,6 +112,25 @@ export default function Portfolio() {
                             <a
                                 className="btn btn-primary btn-floating m-2 repository"
                                 href="https://github.com/Yelzaw/01-html-css-git-homework"
+                                target="_blank"
+                                role="button"
+                                >
+                                    <i className="fab fa-github"></i>
+                            </a>
+                        </a>
+                    </div>
+                </div>
+            </Col>
+        </Row>
+        <Row>
+            <Col md='4'>          
+                <div className="box">
+                    <img src={weather} alt="weather-dashboard" className="image"/>
+                    <div className="overlay">
+                        <a className="text" href="https://yelzaw.github.io/weather-dashboard-for-travelers/" target="_blank">Weather Dashboard for Travelers              
+                            <a
+                                className="btn btn-primary btn-floating m-2 repository"
+                                href="https://github.com/Yelzaw/weather-dashboard-for-travelers"
                                 target="_blank"
                                 role="button"
                                 >

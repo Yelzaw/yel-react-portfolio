@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import '../styles/Contact.css';
 
 // Here we import a helper function that will check if the email is valid
@@ -9,6 +11,7 @@ function validateEmail(email) {
 
 
 export default function Contact() {
+    const form = useRef();
     const [state, setState] = useState({
         name:'',
         email:'',
@@ -48,6 +51,13 @@ export default function Contact() {
         // Preventing the default behavior of the form submit (which is to refresh the page)
           e.preventDefault();
 
+          emailjs.sendForm('gmail', 'template_8805w4g', form.current, 'X0GrYSQCRzXmCSoc9')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+        //   e.target.reset()
           // If everything goes according to plan, we want to clear out the input after a successful registration.
           state.email='';
           state.name='';
@@ -55,71 +65,82 @@ export default function Contact() {
       };
 
     return (
-        <div className = "container mt-2 mb-2">
-            <h1 className="title">Contact</h1>
-            <form id="contact-form" >
-                <div className="controls">
-                    <div className="row">
-                        <div classNames="col-md-12">
-                            <div classNames="form-group">
-                                <label for="form_name">Name: *</label>
-                                <input 
-                                value={name}
-                                onChange={handleInputChange}
-                                type="name" 
-                                name="name" 
-                                className="form-control"
-                                placeholder="Please enter your name" 
-                                />
-                            </div>
+        <form ref={form} onSubmit={handleFormSubmit}>
+                    <label>Name</label>
+                    <input type="text" name="user_name" />
+                    <label>Email</label>
+                    <input type="email" name="user_email" />
+                    <label>Message</label>
+                    <textarea name="message" />
+                    <input type="submit" value="Send" />
+                </form>
+
+        // <div className = "container mt-2 mb-2">
+        //     <h1 className="title">Contact</h1>
+                
+        //     <form ref={form} id="contact-form" >
+        //         <div className="controls">
+        //             <div className="row">
+        //                 <div classNames="col-md-12">
+        //                     <div classNames="form-group">
+        //                         <label for="form_name">Name: *</label>
+        //                         <input 
+        //                         value={name}
+        //                         onChange={handleInputChange}
+        //                         type="name" 
+        //                         name="name" 
+        //                         className="form-control"
+        //                         placeholder="Please enter your name" 
+        //                         />
+        //                     </div>
                             
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className="form-group">
-                                <label for="form_email">Email address:*</label>
-                                <input 
-                                // value={email}                 
-                                id="form_email" 
-                                type="email" 
-                                name="email"
-                                className="form-control"
-                                onChange={handleInputChange}
-                                placeholder="Please enter your email" 
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className="form-group">
-                                <label for="form_message">Message: *</label>
-                                <textarea 
-                                value={message}
-                                id="form_message" 
-                                type="message"
-                                name="message" 
-                                onChange={handleInputChange}
-                                className="form-control"
-                                placeholder="Write your message here." 
-                                rows="4">                                    
-                                </textarea>
-                            </div>
-                        </div>
-                        <div className="col-md-12 mt-2">
-                        {errorMessage && (
-                            <div>
-                            <p className="error-text">{errorMessage}</p>
-                            </div>
-                        )}
-                        </div>
-                        <div className="col-md-12 mt-2">
-                            <button type="button" className="btn btn-success btn-send  pt-2 btn-block" onClick={handleFormSubmit}>Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
+        //                 </div>
+        //             </div>
+        //             <div className="row">
+        //                 <div className="col-md-12">
+        //                     <div className="form-group">
+        //                         <label for="form_email">Email address:*</label>
+        //                         <input 
+        //                         // value={email}                 
+        //                         id="form_email" 
+        //                         type="email" 
+        //                         name="email"
+        //                         className="form-control"
+        //                         onChange={handleInputChange}
+        //                         placeholder="Please enter your email" 
+        //                         />
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //             <div className="row">
+        //                 <div className="col-md-12">
+        //                     <div className="form-group">
+        //                         <label for="form_message">Message: *</label>
+        //                         <textarea 
+        //                         value={message}
+        //                         id="form_message" 
+        //                         type="message"
+        //                         name="message" 
+        //                         onChange={handleInputChange}
+        //                         className="form-control"
+        //                         placeholder="Write your message here." 
+        //                         rows="4">                                    
+        //                         </textarea>
+        //                     </div>
+        //                 </div>
+        //                 <div className="col-md-12 mt-2">
+        //                 {errorMessage && (
+        //                     <div>
+        //                     <p className="error-text">{errorMessage}</p>
+        //                     </div>
+        //                 )}
+        //                 </div>
+        //                 <div className="col-md-12 mt-2">
+        //                     <button type="button" className="btn btn-success btn-send  pt-2 btn-block" onClick={handleFormSubmit}>Submit</button>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     </form>
+        // </div>
       );
 }
