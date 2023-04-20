@@ -1,146 +1,137 @@
-import React, { useState } from 'react';
-import { useRef } from 'react';
+// importing necessary dependencies
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import '../styles/Contact.css';
-
-// Here we import a helper function that will check if the email is valid
-function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-  }
+// importing style for contact page
+// import Footer from '../components/Footer';
+import '../styles/Contact.css'
 
 
 export default function Contact() {
+    // create a reference using useRef hook
     const form = useRef();
-    const [state, setState] = useState({
-        name:'',
-        email:'',
-        message:'',
-    }); 
+    // to get input data from contact form using useState
+    const [values, setValues] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+    const [errors, setErrors] = useState({});
+    const [ submitted, setSubmitted] = useState(false);
 
-    const [errorMessage, setErrorMessage] = useState('');
-    const {name, email, message} = state;
-    
-    const handleInputChange = (e) => {
-        // Getting the value and name of the input which triggered the change
-        const { target } = e;
-        const inputType = target.name;
-        const inputValue = target.value;
+    const handleChange = (event) => {
+        setValues({
+            ...values,
+            [event.target.name]: event.target.value,
+        });
+    };
 
+    const validateForm = () => {
+        let errors = {};
+        if (!values.name) {
+            errors.name = 'Name is required';
+        }
+        if (!values.email) {
+            errors.email = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+            errors.email = 'Email is invalid';
+        }
+        if (!values.message) {
+            errors.message = 'Message is required';
+        }
+        setErrors(errors);
+        // check error is zero, if zero, return true 
+        return Object.keys(errors).length === 0;
+    };
 
-        // Based on the input type, we set the state of either email or message
-        if (inputType === 'email') {
-            const validEmail = validateEmail(inputValue)
-            if (!validEmail) {
-                setErrorMessage('Email is invalid.');
-            } else {
-                setErrorMessage('')
-            }
-        } else if (!inputValue.length) {
-            setErrorMessage(`${inputType} is required.`)
-        } else {setErrorMessage()}
-
-        if(!errorMessage){
-            setState({ ...state, [inputType]: inputValue})
+    // used emailjs template to receive the message directly to my email
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (validateForm()) {
+            emailjs
+                .sendForm(
+                    'service_w8xrj1z',
+                    'template_8805w4g',
+                    form.current,
+                    'X0GrYSQCRzXmCSoc9'
+                )
+                .then(
+                    (result) => {
+                        console.log(result.text);
+                        setSubmitted(true);
+                    },
+                    (error) => {
+                        console.log(error.text);
+                    }
+                )               
         }
     };
 
-
-
-    const handleFormSubmit = (e) => {
-        // Preventing the default behavior of the form submit (which is to refresh the page)
-          e.preventDefault();
-
-          emailjs.sendForm('gmail', 'template_8805w4g', form.current, 'X0GrYSQCRzXmCSoc9')
-          .then((result) => {
-              console.log(result.text);
-          }, (error) => {
-              console.log(error.text);
-          });
-        //   e.target.reset()
-          // If everything goes according to plan, we want to clear out the input after a successful registration.
-          state.email='';
-          state.name='';
-          state.message='';
-      };
-
     return (
-        <form ref={form} onSubmit={handleFormSubmit}>
-                    <label>Name</label>
-                    <input type="text" name="user_name" />
-                    <label>Email</label>
-                    <input type="email" name="user_email" />
-                    <label>Message</label>
-                    <textarea name="message" />
-                    <input type="submit" value="Send" />
-                </form>
+        <>
+            <div style={{ backgroundColor: '#e0e0e0' }}>
+                <div className="container my-1">
+                    {/* <Link to="/">← Go to Home</Link> */}
+                    <div className=" vh-100 text-white">
+                        <form
+                            ref={form}
+                            onSubmit={handleSubmit}
+                            className="mx-auto col-10 col-md-8 col-lg-6 form-container bgImg">
 
-        // <div className = "container mt-2 mb-2">
-        //     <h1 className="title">Contact</h1>
-                
-        //     <form ref={form} id="contact-form" >
-        //         <div className="controls">
-        //             <div className="row">
-        //                 <div classNames="col-md-12">
-        //                     <div classNames="form-group">
-        //                         <label for="form_name">Name: *</label>
-        //                         <input 
-        //                         value={name}
-        //                         onChange={handleInputChange}
-        //                         type="name" 
-        //                         name="name" 
-        //                         className="form-control"
-        //                         placeholder="Please enter your name" 
-        //                         />
-        //                     </div>
-                            
-        //                 </div>
-        //             </div>
-        //             <div className="row">
-        //                 <div className="col-md-12">
-        //                     <div className="form-group">
-        //                         <label for="form_email">Email address:*</label>
-        //                         <input 
-        //                         // value={email}                 
-        //                         id="form_email" 
-        //                         type="email" 
-        //                         name="email"
-        //                         className="form-control"
-        //                         onChange={handleInputChange}
-        //                         placeholder="Please enter your email" 
-        //                         />
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //             <div className="row">
-        //                 <div className="col-md-12">
-        //                     <div className="form-group">
-        //                         <label for="form_message">Message: *</label>
-        //                         <textarea 
-        //                         value={message}
-        //                         id="form_message" 
-        //                         type="message"
-        //                         name="message" 
-        //                         onChange={handleInputChange}
-        //                         className="form-control"
-        //                         placeholder="Write your message here." 
-        //                         rows="4">                                    
-        //                         </textarea>
-        //                     </div>
-        //                 </div>
-        //                 <div className="col-md-12 mt-2">
-        //                 {errorMessage && (
-        //                     <div>
-        //                     <p className="error-text">{errorMessage}</p>
-        //                     </div>
-        //                 )}
-        //                 </div>
-        //                 <div className="col-md-12 mt-2">
-        //                     <button type="button" className="btn btn-success btn-send  pt-2 btn-block" onClick={handleFormSubmit}>Submit</button>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </form>
-        // </div>
-      );
+                            <h1 className='text-black mt-5'>Contact Us</h1>
+                            <div className="form-group mt-4">
+                                <label className='text-black'>Name</label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+                                    value={values.name}
+                                    onChange={handleChange}
+                                />
+                                {/* to display the error msg if there is no input */}
+                                {/* invalid-feedback is from bootstrap and used to show err msg */}
+                                {errors.name && (
+                                    <div className="invalid-feedback">{errors.name}</div>
+                                )}
+                            </div>
+
+                            <div className="form-group mt-4">
+                                <label className='text-black'>Email</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                                    value={values.email}
+                                    onChange={handleChange}
+                                />
+                                {errors.email && (
+                                    <div className="invalid-feedback">{errors.email}</div>
+                                )}
+                            </div>
+
+                            <div className="form-group mt-4">
+                                <label className='text-black'>Message</label>
+                                <textarea
+                                    name="message"
+                                    className={`form-control textbox-height ${errors.message ? 'is-invalid' : ''
+                                        }`}
+                                    value={values.message}
+                                    onChange={handleChange}
+                                />
+                                {errors.message && (
+                                    <div className="invalid-feedback">{errors.message}</div>
+                                )}
+                            </div>
+                            <input type="submit" value="Send" className="btn mt-4" style={{ backgroundColor: '#ADFB2F' }} />
+                        </form>
+                        {submitted && (
+                        <div className="text-center mt-5" >
+                            <h1>Thank you for your message!</h1>
+                        </div>
+                    )}
+                    </div>
+                </div>
+            </div>
+            {/* <Footer /> */}
+        </>
+    );
 }
