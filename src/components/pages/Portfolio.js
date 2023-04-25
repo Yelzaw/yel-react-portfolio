@@ -24,7 +24,7 @@ export default function Portfolio() {
                         <a className="text" href="https://camp-eastcoast.herokuapp.com/" target="_blank">East Coast Camping              
                             <a
                                 className="btn btn-primary btn-floating m-2 repository"
-                                href="https://github.com/Yelzaw/camp-eastcoast"
+                                href="https://github.com/Yelzaw/EastCoastCamping/tree/main/east-coast-camping"
                                 target="_blank"
                                 role="button"
                                 >
@@ -41,7 +41,7 @@ export default function Portfolio() {
                         <a className="text" href="https://desolate-basin-87130.herokuapp.com/" target="_blank">Event Time              
                             <a
                                 className="btn btn-primary btn-floating m-2 repository"
-                                href="https://github.com/Yelzaw/event-time"
+                                href="https://github.com/Yelzaw/Event_Time"
                                 target="_blank"
                                 role="button"
                                 >

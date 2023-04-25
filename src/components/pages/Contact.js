@@ -45,7 +45,7 @@ export default function Contact() {
 
     // used emailjs template to receive the message directly to my email
     const handleSubmit = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         if (validateForm()) {
             emailjs
                 .sendForm(
